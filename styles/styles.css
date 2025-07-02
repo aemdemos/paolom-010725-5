@@ -102,6 +102,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
   line-height: 1.25;
   scroll-margin: 40px;
+  letter-spacing: -0.904px;
 }
 
 h1 {
