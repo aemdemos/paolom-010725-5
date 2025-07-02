@@ -1,3 +1,4 @@
+
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -43,5 +44,129 @@
 @media (width >= 900px) {
   .hero {
     padding: 40px 32px;
+  }
+}
+
+.hero.hero8 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-height: 600px;
+  padding: 0;
+  background: #fff;
+  box-sizing: border-box;
+}
+
+/* Hide the empty first div if present */
+.hero.hero8 > div:first-of-type {
+  display: none;
+}
+
+/* Main content column: center horizontally and vertically */
+.hero.hero8 > div:last-of-type {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Inner wrapper: force left alignment for all content */
+.hero.hero8 > div:last-of-type > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Headline styling */
+.hero.hero8 h2 {
+  font-family: var(--heading-font-family);
+  font-size: 2.7rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--text-color);
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+  text-align: left;
+  max-width: 100%;
+}
+
+/* Supporting text styling */
+.hero.hero8 p {
+  color: #4b4b4b;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0 0 2.3rem;
+  text-align: left;
+  max-width: 28em;
+  box-sizing: border-box;
+}
+
+/* Only style non-button paragraphs as body text */
+.hero.hero8 p:not(.button-container) {
+  align-self: flex-start;
+  margin-bottom: 2.3rem;
+}
+
+/* Button containers: left-aligned and stacked with gap */
+.hero.hero8 .button-container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1.1rem;
+}
+
+/* Remove gap after last button */
+.hero.hero8 .button-container:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Button styles: pill, outlined, left-aligned */
+.hero.hero8 .button {
+  width: 250px;
+  min-height: 44px;
+  border: 1.5px solid #000;
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+  font-family: var(--body-font-family);
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  line-height: 44px;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  transition: border 0.2s, box-shadow 0.2s;
+  align-self: flex-start;
+}
+
+/* Only top button gets yellow glow/outline */
+.hero.hero8 .button-container:first-of-type .button {
+  box-shadow: 0 0 0 2px #fffb8e;
+}
+
+/* Responsive: stack on mobile and reduce margin */
+@media (width <= 900px) {
+  .hero.hero8 {
+    min-height: 0;
+    padding: 40px 0 0;
+    align-items: flex-start;
+  }
+
+  .hero.hero8 > div:last-of-type {
+    margin: 0 0 0 5vw;
+    max-width: 100%;
+  }
+
+  .hero.hero8 .button {
+    width: 100%;
+    min-width: 0;
+    max-width: 320px;
   }
 }
