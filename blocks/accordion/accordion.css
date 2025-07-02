@@ -21,12 +21,12 @@
   transition: background-color 0.2s;
 }
 
-.accordion details[open] summary {
+.accordion details summary:focus,
+.accordion details summary:hover {
   background-color: var(--light-color);
 }
 
-.accordion details summary:focus,
-.accordion details summary:hover {
+.accordion details[open] summary {
   background-color: var(--light-color);
 }
 
@@ -58,4 +58,105 @@
 .accordion details[open] .accordion-item-body {
   border-top: 1px solid #dadada;
   background-color: var(--background-color);
+}
+
+.accordion.accordion7 {
+  background: #F5F6F3;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+}
+
+/* Stack accordion items with only bottom border as separator, no card effect */
+.accordion.accordion7 .accordion-item {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #E0E0E0;
+  border-radius: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* No divider after last item */
+.accordion.accordion7 .accordion-item:last-child {
+  border-bottom: none;
+}
+
+/* Remove extra margin or padding between rows/items (if inherited) */
+.accordion.accordion7 .accordion-item + .accordion-item {
+  margin: 0;
+  padding: 0;
+}
+
+/* Flex layout for label, align side-by-side, tighten vertical padding */
+.accordion.accordion7 .accordion-item-label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  min-height: 44px;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  color: #232323;
+  box-sizing: border-box;
+  transition: background 0.2s;
+}
+
+/* Remove webkit default marker */
+.accordion.accordion7 .accordion-item-label::-webkit-details-marker {
+  display: none;
+}
+
+/* Label text styling */
+.accordion.accordion7 .accordion-item-label p {
+  margin: 0;
+  flex: 1 1 0%;
+  font-size: 15px;
+  color: #232323;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: left;
+  letter-spacing: 0;
+}
+
+/* Chevron icon, smaller, centered */
+.accordion.accordion7 .accordion-item-label::after {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  margin-left: 12px;
+  border-right: 2px solid #232323;
+  border-bottom: 2px solid #232323;
+  vertical-align: middle;
+  align-self: center;
+  position: relative;
+  top: 1px;
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+}
+
+.accordion.accordion7 .accordion-item[open] .accordion-item-label::after {
+  transform: rotate(-135deg);
+}
+
+/* Body content spacing, matching row padding */
+.accordion.accordion7 .accordion-item-body {
+  padding: 0 24px 16px;
+  margin: 0;
+  background: none;
+  border: none;
+}
+
+/* Remove outline on summary when focused */
+.accordion.accordion7 .accordion-item-label:focus {
+  outline: none;
 }
