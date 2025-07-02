@@ -10,9 +10,15 @@
  * governing permissions and limitations under the License.
  */
 
-export const customTransformers = {
-  svgToPng: svgToPngTransformer,
-};
+/**
+ * A map of custom parser names to imported parser functions.
+ *
+ * eg.
+ * {
+ *   myParser: customParser1,
+ * }
+ */
+export const customParsers = {};
 
 /**
  * An array of custom page elements to parse.
@@ -28,19 +34,6 @@ export const customTransformers = {
 export const customElements = [];
 
 /**
- * Custom transformer to convert SVGs to PNG images after all other transforms.
- * Replaces each SVG with an <img> using a data URL.
+ * Custom transformers
  */
-
-function svgToPngTransformer(hookName, element, payload) {
-  if (hookName !== 'afterTransform') return;
-  const svgs = element.querySelectorAll('svg');
-  svgs.forEach((svg) => {
-    const serializer = new XMLSerializer();
-    const svgString = serializer.serializeToString(svg);
-    const svgDataUrl = `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svgString)))}`;
-    const img = svg.ownerDocument.createElement('img');
-    img.src = svgDataUrl;
-    svg.replaceWith(img);
-  });
-}
+export const customTransformers = {};
