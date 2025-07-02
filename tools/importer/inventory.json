@@ -57,11 +57,11 @@
       ]
     },
     {
-      "name": "Cards (no images)",
+      "name": "Cards",
       "cluster": 3,
       "source": "Cards",
       "target": "Cards",
-      "key": "cardsNoImages3",
+      "key": "cards3",
       "instances": [
         {
           "url": "https://wknd-trendsetters-3df4b7964376074fda42d.webflow.io/",
