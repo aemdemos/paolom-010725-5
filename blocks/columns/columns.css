@@ -1,3 +1,4 @@
+/* --- Column Layouts and Images --- */
 
 .columns > div {
   display: flex;
@@ -87,4 +88,181 @@
     flex-direction: column;
     gap: 24px;
   }
+}
+
+.columns.columns9 {
+  background: #000;
+  color: #fff;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--body-font-family);
+}
+
+/* Main columns row */
+.columns.columns9 > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 38px;
+  padding: 44px 0 44px 28px;
+  box-sizing: border-box;
+}
+
+@media (width <= 1200px) {
+  .columns.columns9 > div {
+    padding-left: 14px;
+    gap: 20px;
+  }
+}
+
+@media (width <= 900px) {
+  .columns.columns9 > div {
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 12px;
+  }
+}
+
+/* Ensure first column is wide enough for heading and socials */
+.columns.columns9 > div > div:first-child {
+  flex: 0 0 340px;
+  min-width: 340px;
+  max-width: 420px;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* FASHION BLOG headline */
+.columns.columns9 .button-container {
+  margin: 0 0 8px;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.columns.columns9 .button-container .button {
+  font-size: 28px;
+  font-family: var(--heading-font-family);
+  font-weight: 800;
+  color: #fff;
+  background: none;
+  border: none;
+  box-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: 2.8px;
+  padding: 0;
+  margin: 0;
+  line-height: 1.1;
+  text-align: left;
+  display: inline-block;
+  width: auto;
+  max-width: none;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: unset;
+}
+
+/* Remove button pill styles from base sheet */
+.columns.columns9 .button-container .button,
+.columns.columns9 .button-container .button:visited,
+.columns.columns9 .button-container .button:active {
+  border-radius: 0;
+  box-shadow: none;
+  background: none;
+  border: none;
+  color: #fff;
+  outline: none;
+  margin: 0;
+}
+
+/* Remove bullet list for all ul */
+.columns.columns9 ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Headings: small, uppercase, gray */
+.columns.columns9 h2 {
+  color: #6a6a6a;
+  font-size: 13px;
+  font-family: var(--body-font-family);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  margin: 0 0 18px;
+  line-height: 1.2;
+  text-align: left;
+}
+
+/* List items under headings */
+.columns.columns9 ul li {
+  margin-bottom: 12px;
+  padding: 0;
+  text-align: left;
+}
+
+.columns.columns9 ul li:last-child {
+  margin-bottom: 0;
+}
+
+/* Section links (trends, inspire, explore) */
+.columns.columns9 ul li a {
+  color: #fff;
+  font-size: 16px;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.2s;
+  background: none;
+  padding: 0;
+  margin: 0;
+  line-height: 1.55;
+  display: inline-block;
+  text-align: left;
+}
+
+.columns.columns9 ul li a:hover,
+.columns.columns9 ul li a:focus {
+  color: #e1e1e1;
+  text-decoration: underline;
+}
+
+/* Social links as horizontal row with reduced gap and no wrap */
+.columns.columns9 > div > div:first-child ul {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.columns.columns9 > div > div:first-child ul li {
+  margin: 0;
+  padding: 0;
+}
+
+.columns.columns9 > div > div:first-child ul li a {
+  display: inline-block;
+  min-width: 22px;
+  min-height: 22px;
+  line-height: 22px;
+  font-size: 13px;
+  color: #fff;
+  background: none;
+  padding: 0;
+  margin: 0;
+  vertical-align: middle;
+  text-align: left;
+  white-space: nowrap;
+  overflow: visible;
+  text-overflow: unset;
 }
