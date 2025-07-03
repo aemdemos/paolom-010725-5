@@ -140,13 +140,18 @@
 }
 
 .tabs.tabs5 .tabs-list .tabs-tab[aria-selected="false"] {
-  color: #6C6C6C;
+  color: #969696;
   font-weight: 500;
   border-bottom: none;
 }
 
 .tabs.tabs5 .tabs-list .tabs-tab[aria-selected="false"] p {
-  color: #6C6C6C;
+  color: #969696;
+  font-weight: 400;
+}
+
+.tabs.tabs5 .tabs-list .tabs-tab[aria-selected="false"] p {
+  color: #969696;
   font-weight: 400;
   border-bottom: none;
 }
