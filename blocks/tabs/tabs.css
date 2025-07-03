@@ -146,12 +146,12 @@
 }
 
 .tabs.tabs5 .tabs-list .tabs-tab[aria-selected="false"] {
-  color: #666;
+  color: #969696;
   font-weight: 400;
 }
 
 .tabs.tabs5 .tabs-list .tabs-tab[aria-selected="false"] p {
-  color: #666;
+  color: #969696;
   font-weight: 400;
   border-bottom: none;
 }
