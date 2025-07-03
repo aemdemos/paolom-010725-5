@@ -11,6 +11,22 @@
   margin-bottom: 0.8em;
 }
 
+.accordion details .accordion-item-body {
+  padding: 0 16px;
+}
+
+.accordion.accordion7 .accordion-item-body {
+  padding: 0 20px 20px;
+  margin: 0;
+  background: none;
+  border: none;
+}
+
+.accordion details[open] .accordion-item-body {
+  border-top: 1px solid #dadada;
+  background-color: var(--background-color);
+}
+
 .accordion details summary {
   position: relative;
   padding: 0 16px;
@@ -19,6 +35,10 @@
   list-style: none;
   overflow: auto;
   transition: background-color 0.2s;
+}
+
+.accordion.accordion7 summary {
+  overflow: visible;
 }
 
 .accordion details summary:focus,
@@ -51,22 +71,15 @@
   transform: translateY(-50%) rotate(-45deg);
 }
 
-.accordion details .accordion-item-body {
-  padding: 0 16px;
-}
-
-.accordion details[open] .accordion-item-body {
-  border-top: 1px solid #dadada;
-  background-color: var(--background-color);
-}
-
 .accordion.accordion7 {
-  background: #F5F6F3;
-  margin: 0;
+  max-width: 928px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #FAFAF6;
   padding: 0;
-  width: 100%;
-  border: none;
+  border-radius: 0;
   box-sizing: border-box;
+  min-height: 180px;
 }
 
 /* Stack accordion items with only bottom border as separator, no card effect */
@@ -97,16 +110,17 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  padding: 16px 24px;
-  min-height: 44px;
-  width: 100%;
+  justify-content: flex-start;
+  padding: 24px 20px;
   background: transparent;
+  min-height: 0;
   cursor: pointer;
   border: none;
   outline: none;
+  gap: 24px;
   font-size: 15px;
-  color: #232323;
+  font-weight: 400;
+  width: 100%;
   box-sizing: border-box;
   transition: background 0.2s;
 }
@@ -119,44 +133,36 @@
 /* Label text styling */
 .accordion.accordion7 .accordion-item-label p {
   margin: 0;
-  flex: 1 1 0%;
+  flex: 0 1 auto;
   font-size: 15px;
   color: #232323;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.25;
   text-align: left;
   letter-spacing: 0;
+  background: transparent;
 }
 
-/* Chevron icon, smaller, centered */
+/* Chevron: smaller, lighter, thinner, better vertically aligned */
 .accordion.accordion7 .accordion-item-label::after {
+  width: 8px;
+  height: 8px;
+  border-right: 1px solid #CCC;
+  border-bottom: 1px solid #CCC;
   display: inline-block;
-  width: 9px;
-  height: 9px;
-  margin-left: 12px;
-  border-right: 2px solid #232323;
-  border-bottom: 2px solid #232323;
   vertical-align: middle;
   align-self: center;
-  position: relative;
-  top: 1px;
   transform: rotate(45deg);
   transition: transform 0.2s;
+  background: none;
+  margin: 0;
 }
 
+/* Chevron rotates up when open */
 .accordion.accordion7 .accordion-item[open] .accordion-item-label::after {
   transform: rotate(-135deg);
 }
 
-/* Body content spacing, matching row padding */
-.accordion.accordion7 .accordion-item-body {
-  padding: 0 24px 16px;
-  margin: 0;
-  background: none;
-  border: none;
-}
-
-/* Remove outline on summary when focused */
-.accordion.accordion7 .accordion-item-label:focus {
-  outline: none;
+.accordion.accordion7 details {
+  overflow: visible;
 }
