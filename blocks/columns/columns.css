@@ -34,18 +34,19 @@
   }
 }
 
+/* ======= MERGED .columns.columns2 SELECTOR BELOW ======= */
 .columns.columns2 {
-  background: #fff;
-  padding: 0;
-  margin: 0;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  right: 50%;
-  transform: translateX(-50%);
+  max-width: 1248px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  padding-top: 0;
+  background: transparent;
   box-sizing: border-box;
-  overflow: hidden;
+  position: relative;
 }
+
+/* ======= END MERGED .columns.columns2 SELECTOR ======= */
 
 .columns.columns2 > div {
   display: flex;
@@ -64,21 +65,28 @@
   align-items: stretch;
   min-width: 0;
   margin: 0;
+  position: relative;
+  min-height: 0;
+  box-sizing: border-box;
 }
 
 .columns.columns2 .columns-img-col picture,
 .columns.columns2 .columns-img-col img {
   width: 100%;
-  height: auto;
-  display: block;
+  aspect-ratio: 1 / 1;
   border-radius: 20px;
   object-fit: cover;
+  display: block;
+  box-sizing: border-box;
   margin: 0;
+  height: auto;
 }
 
 @media (width <= 900px) {
   .columns.columns2 {
-    width: 100%;
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
     left: 0;
     right: 0;
     transform: none;
@@ -86,7 +94,13 @@
 
   .columns.columns2 > div {
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
+  }
+
+  .columns.columns2 .columns-img-col picture,
+  .columns.columns2 .columns-img-col img {
+    aspect-ratio: 1 / 1;
+    border-radius: 14px;
   }
 }
 
