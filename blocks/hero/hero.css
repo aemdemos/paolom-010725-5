@@ -1,4 +1,5 @@
 
+
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -45,17 +46,6 @@
   .hero {
     padding: 40px 32px;
   }
-}
-
-.hero.hero8 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-height: 600px;
-  padding: 0;
-  background: #fff;
-  box-sizing: border-box;
 }
 
 /* Hide the empty first div if present */
@@ -169,4 +159,179 @@
     min-width: 0;
     max-width: 320px;
   }
+}
+
+/* GENERATED CSS STARTS */
+
+.hero.hero8 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 64px 7vw;
+  background: #fff;
+  min-height: 360px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* Reserve space for left column (empty in markup) */
+.hero.hero8 > div:first-child {
+  flex: 1 1 48%;
+  max-width: 48%;
+  min-width: 220px;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* Right column (contains all content) */
+.hero.hero8 > div:last-child {
+  flex: 1 1 52%;
+  max-width: 600px;
+  min-width: 320px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+/* Two-column inner layout: text group left, button group right */
+.hero.hero8 > div:last-child > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  gap: 72px;
+}
+
+/* Text group: heading + subhead */
+.hero.hero8 > div:last-child > div > h2,
+.hero.hero8 > div:last-child > div > p:not(.button-container) {
+  flex: 0 1 400px;
+  max-width: 420px;
+  text-align: left;
+  margin-right: 0;
+  margin-left: 0;
+  white-space: normal;
+}
+
+.hero.hero8 > div:last-child > div > h2 {
+  margin-bottom: 18px;
+}
+
+.hero.hero8 > div:last-child > div > p:not(.button-container) {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+  margin-top: 0;
+  max-width: 420px;
+}
+
+/* Button group: stack vertically, align right */
+.hero.hero8 > div:last-child > div > .button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 230px;
+  max-width: 230px;
+  margin: 0;
+  gap: 16px;
+}
+
+.hero.hero8 .button {
+  width: 230px;
+  min-width: 160px;
+  max-width: 100%;
+  min-height: 48px;
+  line-height: 48px;
+  border: 1.5px solid #000;
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+  font-size: 1rem;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  text-align: center;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.hero.hero8 .button-container:first-of-type .button {
+  box-shadow: 0 0 0 2px #f9f871;
+}
+
+/* Removes extra bottom margin from last button */
+.hero.hero8 .button-container:last-of-type .button {
+  margin-bottom: 0;
+}
+
+/* Responsive: stack on mobile */
+@media (width <= 900px) {
+  .hero.hero8 {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 40px 4vw;
+    min-height: unset;
+  }
+
+  .hero.hero8 > div:first-child {
+    display: none;
+  }
+
+  .hero.hero8 > div:last-child {
+    max-width: 100%;
+    width: 100%;
+    min-width: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero.hero8 > div:last-child > div {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+  }
+
+  .hero.hero8 > div:last-child > div > h2,
+  .hero.hero8 > div:last-child > div > p:not(.button-container) {
+    max-width: 98vw;
+    text-align: center;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .hero.hero8 > div:last-child > div > .button-container {
+    min-width: 0;
+    width: 100%;
+    max-width: 320px;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .hero.hero8 .button {
+    width: 100%;
+    min-width: 0;
+    max-width: 320px;
+    align-self: center;
+  }
+}
+
+/* MERGED SELECTOR FOR .hero.hero8 */
+.hero.hero8 {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 64px 7vw;
+  background: #fff;
+  min-height: 360px;
+  box-sizing: border-box;
+  width: 100%;
 }
