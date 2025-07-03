@@ -1,4 +1,4 @@
-
+/* 1. Base Tabs Styles */
 .tabs .tabs-list {
   display: flex;
   gap: 0.5ch;
@@ -57,71 +57,81 @@
   display: none;
 }
 
+/* 2. .tabs.tabs5 Block */
 .tabs.tabs5 {
   display: block;
   background: #000;
+  color: #fff;
   width: 100%;
   margin: 0;
   padding: 0;
+  font-family: var(--body-font-family);
 }
 
 .tabs.tabs5 .tabs-list {
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: stretch;
-  align-items: flex-start;
   gap: 0;
   background: #000;
   height: 36px;
   width: 100%;
   margin: 0;
   padding: 0;
-  border-bottom: none;
+  border: none;
   position: relative;
 }
 
 .tabs.tabs5 .tabs-list .tabs-tab {
   flex: 1 1 0;
+  min-width: 0;
+  height: 100%;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
-  position: relative;
   background: transparent;
   border: none;
   border-radius: 0;
   outline: none;
   margin: 0;
   padding: 0;
-  color: #666;
-  font-weight: 400;
-  cursor: pointer;
+  color: #6C6C6C;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 500;
   box-shadow: none;
   text-align: center;
-  min-width: 0;
-  height: 100%;
+  position: relative;
+  cursor: pointer;
+  transition: none;
+  line-height: 1;
 }
 
 .tabs.tabs5 .tabs-list .tabs-tab p {
   margin: 0;
-  padding: 3px 0 0;
-  text-align: center;
-  font-family: sans-serif;
-  font-size: 15px;
-  font-weight: inherit;
+  padding: 0 16px;
   color: inherit;
-  position: relative;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  text-align: center;
   background: transparent;
+  line-height: 1;
   display: inline-block;
-  width: auto;
-  min-width: 0;
-  border-bottom: none;
-  line-height: 1.1;
+  vertical-align: middle;
+}
+
+.tabs.tabs5 .tabs-panel > div > h3,
+.tabs.tabs5 .tabs-panel > div > p:first-of-type {
+  margin-top: 0.4em;
 }
 
 .tabs.tabs5 .tabs-list .tabs-tab[aria-selected="true"] {
   color: #fff;
   font-weight: 700;
   cursor: default;
+  border-bottom: 2px solid #fff;
 }
 
 .tabs.tabs5 .tabs-list .tabs-tab[aria-selected="true"] p {
@@ -129,23 +139,13 @@
   font-weight: 700;
 }
 
-.tabs.tabs5 .tabs-list .tabs-tab[aria-selected="true"]::after {
-  position: absolute;
-  left: 12.5%;
-  width: 75%;
-  bottom: 0;
-  height: 2px;
-  background: #fff;
-  border-radius: 1px;
-  display: block;
-}
-
-.tabs.tabs5 .tabs-list .tabs-tab[aria-selected="true"] p::after,
-.tabs.tabs5 .tabs-list .tabs-tab[aria-selected="true"] p::before {
-  display: none;
-}
-
 .tabs.tabs5 .tabs-list .tabs-tab[aria-selected="false"] {
+  color: #969696;
+  font-weight: 500;
+  border-bottom: none;
+}
+
+.tabs.tabs5 .tabs-list .tabs-tab[aria-selected="false"] p {
   color: #969696;
   font-weight: 400;
 }
@@ -156,16 +156,35 @@
   border-bottom: none;
 }
 
+.tabs.tabs5 .tabs-list .tabs-tab[aria-selected="true"]::after {
+  /* No content here because border-bottom is used for underline */
+  display: none;
+}
+
+.tabs.tabs5 .tabs-list .tabs-tab[aria-selected="true"] p::after,
+.tabs.tabs5 .tabs-list .tabs-tab[aria-selected="true"] p::before {
+  display: none;
+}
+
 .tabs.tabs5 .tabs-list .tabs-tab[aria-selected="false"]::after,
 .tabs.tabs5 .tabs-list .tabs-tab[aria-selected="false"]::before {
   display: none;
 }
 
+.tabs.tabs5 .tabs-list .tabs-tab:focus,
+.tabs.tabs5 .tabs-list .tabs-tab:active {
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  outline: none;
+}
+
 .tabs.tabs5 .tabs-panel {
+  background: #000;
   border: none;
   padding: 0;
-  background: #000;
   margin: 0;
+  display: none;
 }
 
 .tabs.tabs5 .tabs-panel[aria-hidden="true"] {
@@ -174,4 +193,9 @@
 
 .tabs.tabs5 .tabs-panel[aria-hidden="false"] {
   display: block;
+}
+
+.tabs.tabs5 .tabs-panel > div {
+  margin-top: 0;
+  padding-top: 0;
 }
