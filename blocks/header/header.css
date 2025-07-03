@@ -364,7 +364,6 @@ header nav .nav-tools .button {
   width: 100%;
   left: 0;
   top: 0;
-  background: #FAFBF7;
   justify-content: center;
   align-items: center;
   max-width: none;
@@ -384,7 +383,6 @@ header nav .nav-tools .button {
   margin: 0 auto;
   padding-left: 32px;
   padding-right: 32px;
-  background: #FAFBF7;
   min-height: 48px;
   box-sizing: border-box;
   justify-content: flex-start;

@@ -147,7 +147,7 @@ pre {
 }
 
 main>div {
-  margin: 40px 16px;
+  padding: 40px 16px;
 }
 
 input, textarea, select, button {
@@ -230,7 +230,8 @@ main img {
 
 /* sections */
 main>.section {
-  margin: 40px 0;
+  padding-top: 80px;
+  padding-bottom: 80px;
 }
 
 main>.section>div {
