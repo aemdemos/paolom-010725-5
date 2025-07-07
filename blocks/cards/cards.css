@@ -165,8 +165,8 @@
   margin-bottom: 12px;
 }
 
-.cards.cards4 .cards-card-body > p:nth-child(1),
-.cards.cards4 .cards-card-body > p:nth-child(2) {
+.cards.cards4 .cards-card-body p:nth-child(1),
+.cards.cards4 .cards-card-body  p:nth-child(2) {
   display: inline-block;
   vertical-align: top;
   padding: 4px 14px;
@@ -181,7 +181,7 @@
   margin-top: 0;
 }
 
-.cards.cards4 .cards-card-body > p:nth-child(2) {
+.cards.cards4 .cards-card-body  p:nth-child(2) {
   background: none;
   color: #222;
   font-weight: 400;
@@ -190,7 +190,7 @@
   margin-bottom: 14px;
 }
 
-.cards.cards4 .cards-card-body > h3 {
+.cards.cards4 .cards-card-body  h3 {
   font-size: 24px;
   font-family: var(--heading-font-family), Arial, sans-serif;
   font-weight: 700;
@@ -201,7 +201,7 @@
   letter-spacing: 0.01em;
 }
 
-.cards.cards4 .cards-card-body > p:nth-child(4) {
+.cards.cards4 .cards-card-body  p:nth-child(4) {
   font-size: 16px;
   color: #6E6E6E;
   font-weight: 400;
@@ -268,8 +268,8 @@
     padding: 28px 18px;
   }
 
-  .cards.cards4 .cards-card-body > p:nth-child(1),
-  .cards.cards4 .cards-card-body > p:nth-child(2) {
+  .cards.cards4 .cards-card-body  p:nth-child(1),
+  .cards.cards4 .cards-card-body  p:nth-child(2) {
     margin-bottom: 8px;
     margin-left: 0;
   }
