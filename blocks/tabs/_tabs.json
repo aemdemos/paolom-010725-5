@@ -47,11 +47,18 @@
         },
         {
           "component": "richtext",
-          "name": "content",
+          "name": "tabs_content",
           "value": "",
           "label": "Content",
           "valueType": "string"
-        }
+        },
+        {
+          "component": "reference",
+          "valueType": "string",
+          "name": "tabs_image",
+          "label": "Image",
+          "multi": false
+        },
       ]
     },
     {
