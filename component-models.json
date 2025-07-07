@@ -180,6 +180,18 @@
     ]
   },
   {
+    "id": "cards",
+    "fields": [
+      {
+        "component": "text",
+        "name": "classes",
+        "value": "",
+        "label": "Style",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "carousel-item",
     "fields": [
       {
