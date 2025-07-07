@@ -33,6 +33,13 @@
           "name": "rows",
           "value": "",
           "label": "Rows"
+        },
+        {
+          "component": "text",
+          "name": "classes",
+          "value": "",
+          "label": "Style",
+          "valueType": "string"
         }
       ]
     }
