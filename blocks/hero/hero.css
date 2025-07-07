@@ -1,4 +1,9 @@
 
+
+/*
+ * HERO CONTAINER FIXED CSS
+ */
+
 .hero-container .hero-wrapper {
   max-width: unset;
   padding: 0;
@@ -47,20 +52,19 @@
   }
 }
 
-.hero.hero8 {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  min-height: 600px;
-  padding: 0;
-  background: #fff;
-  box-sizing: border-box;
-}
-
 /* Hide the empty first div if present */
 .hero.hero8 > div:first-of-type {
   display: none;
+}
+
+/* Reserve space for left column (empty in markup) */
+.hero.hero8 > div:first-child {
+  flex: 1 1 48%;
+  max-width: 48%;
+  min-width: 220px;
+  opacity: 0;
+  pointer-events: none;
+  user-select: none;
 }
 
 /* Main content column: center horizontally and vertically */
@@ -75,25 +79,16 @@
   box-sizing: border-box;
 }
 
-/* Inner wrapper: force left alignment for all content */
-.hero.hero8 > div:last-of-type > div {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+/* Right column (contains all content) */
+.hero.hero8 > div:last-child {
+  flex: 1 1 52%;
+  max-width: 600px;
+  min-width: 320px;
   width: 100%;
-}
-
-/* Headline styling */
-.hero.hero8 h2 {
-  font-family: var(--heading-font-family);
-  font-size: 2.7rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-  color: var(--text-color);
-  line-height: 1.1;
-  margin: 0 0 1.5rem;
-  text-align: left;
-  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 /* Supporting text styling */
@@ -113,6 +108,60 @@
   margin-bottom: 2.3rem;
 }
 
+/* Headline styling */
+.hero.hero8 h2 {
+  font-family: var(--heading-font-family);
+  font-size: 2.7rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--text-color);
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+  text-align: left;
+  max-width: 100%;
+}
+
+/* Inner wrapper: force left alignment for all content */
+.hero.hero8 > div:last-of-type > div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* Two-column inner layout: text group left, button group right */
+.hero.hero8 > div:last-child > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  gap: 72px;
+}
+
+/* Text group: heading + subhead */
+.hero.hero8 > div:last-child > div > h2,
+.hero.hero8 > div:last-child > div > p:not(.button-container) {
+  flex: 0 1 400px;
+  max-width: 420px;
+  text-align: left;
+  margin-right: 0;
+  margin-left: 0;
+  white-space: normal;
+}
+
+.hero.hero8 > div:last-child > div > h2 {
+  margin-bottom: 18px;
+}
+
+.hero.hero8 > div:last-child > div > p:not(.button-container) {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+  margin-top: 0;
+  max-width: 420px;
+}
+
 /* Button containers: left-aligned and stacked with gap */
 .hero.hero8 .button-container {
   width: 100%;
@@ -126,10 +175,25 @@
   margin-bottom: 0;
 }
 
+/* Button group: stack vertically, align right */
+.hero.hero8 > div:last-child > div > .button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 230px;
+  max-width: 230px;
+  margin: 0;
+  gap: 16px;
+}
+
 /* Button styles: pill, outlined, left-aligned */
 .hero.hero8 .button {
-  width: 250px;
-  min-height: 44px;
+  width: 230px;
+  min-width: 160px;
+  max-width: 100%;
+  min-height: 48px;
+  line-height: 48px;
   border: 1.5px solid #000;
   border-radius: 999px;
   background: #fff;
@@ -138,25 +202,43 @@
   font-size: 1rem;
   font-weight: 400;
   text-align: center;
-  line-height: 44px;
   box-shadow: none;
   margin: 0;
   padding: 0;
-  transition: border 0.2s, box-shadow 0.2s;
+  transition: border 0.2s, border-color 0.2s, box-shadow 0.2s;
   align-self: flex-start;
 }
 
 /* Only top button gets yellow glow/outline */
 .hero.hero8 .button-container:first-of-type .button {
-  box-shadow: 0 0 0 2px #fffb8e;
+  box-shadow: 0 0 0 2px #f9f871;
+}
+
+/* Removes extra bottom margin from last button */
+.hero.hero8 .button-container:last-of-type .button {
+  margin-bottom: 0;
 }
 
 /* Responsive: stack on mobile and reduce margin */
 @media (width <= 900px) {
   .hero.hero8 {
-    min-height: 0;
-    padding: 40px 0 0;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 40px 4vw;
+    min-height: unset;
+  }
+
+  .hero.hero8 > div:first-child {
+    display: none;
+  }
+
+  .hero.hero8 > div:last-child {
+    max-width: 100%;
+    width: 100%;
+    min-width: 0;
+    flex-direction: column;
+    align-items: center;
   }
 
   .hero.hero8 > div:last-of-type {
@@ -164,9 +246,171 @@
     max-width: 100%;
   }
 
+  .hero.hero8 > div:last-child > div {
+    flex-direction: column;
+    gap: 0;
+    align-items: center;
+  }
+
+  .hero.hero8 > div:last-child > div > h2,
+  .hero.hero8 > div:last-child > div > p:not(.button-container) {
+    max-width: 98vw;
+    text-align: center;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .hero.hero8 > div:last-child > div > .button-container {
+    min-width: 0;
+    width: 100%;
+    max-width: 320px;
+    align-items: center;
+    gap: 14px;
+  }
+
   .hero.hero8 .button {
     width: 100%;
     min-width: 0;
     max-width: 320px;
+    align-self: center;
   }
 }
+
+/* MERGED SELECTOR FOR .hero.hero8 */
+.hero.hero8 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  background: #fff;
+  padding: 64px 0;
+  min-height: 320px;
+  box-sizing: border-box;
+}
+
+/* Generated CSS (from Experiment 3) */
+
+.hero.hero8 > div:first-child {
+  display: none;
+}
+
+.hero.hero8 > div:last-child {
+  flex: 1 1 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  max-width: 1248px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 32px;
+}
+
+.hero.hero8 > div:last-child > div {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 88px;
+  width: 100%;
+  max-width: 100%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.hero.hero8 > div:last-child > div > h2,
+.hero.hero8 > div:last-child > div > p:not(.button-container) {
+  flex-basis: 420px;
+  max-width: 420px;
+  min-width: 260px;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.hero.hero8 > div:last-child > div > h2 {
+  margin-bottom: 16px;
+  font-family: var(--heading-font-family);
+  font-size: 2.7rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: var(--text-color);
+  line-height: 1.1;
+}
+
+.hero.hero8 > div:last-child > div > p:not(.button-container) {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.hero.hero8 > div:last-child > div > .button-container {
+  flex-basis: 220px;
+  max-width: 220px;
+  min-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.hero.hero8 > div:last-child > div > .button-container + .button-container {
+  margin-top: 14px;
+}
+
+.hero.hero8 .button {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 10px 0;
+  border: 1.5px solid #000;
+  border-radius: 999px;
+  background: #fff;
+  color: #000;
+  font-size: 1rem;
+  font-family: var(--body-font-family);
+  font-weight: 400;
+  text-align: center;
+  box-shadow: none;
+  margin: 0;
+  transition: border-color 0.2s;
+}
+
+.hero.hero8 > div:last-child > div > .button-container:first-of-type .button {
+  box-shadow: 1px 0 0 0 #f4fe8b;
+}
+
+@media (width <= 900px) {
+  .hero.hero8 {
+    padding: 32px 0;
+  }
+
+  .hero.hero8 > div:last-child {
+    padding: 0 16px;
+  }
+
+  .hero.hero8 > div:last-child > div {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .hero.hero8 > div:last-child > div > h2,
+  .hero.hero8 > div:last-child > div > p:not(.button-container) {
+    text-align: center;
+    max-width: 98vw;
+  }
+
+  .hero.hero8 > div:last-child > div > .button-container {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .hero.hero8 .button {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
