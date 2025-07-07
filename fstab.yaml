@@ -1,2 +1,5 @@
 mountpoints:
-  /: https://adobe.sharepoint.com/:f:/r/sites/AEMDemos/Shared%20Documents/sites/esaas-demos/paolom-010725-5?csf=1&web=1&e=z60Kdb
+  /:
+    url: "https://author-p130360-e1272151.adobeaemcloud.com/bin/franklin.delivery/aemdemos/paolom-010725-5/main"
+    type: "markup"
+    suffix: ".html"
