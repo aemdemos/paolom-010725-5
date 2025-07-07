@@ -161,6 +161,18 @@
     ]
   },
   {
+    "id": "accordion",
+    "fields": [
+      {
+        "component": "text",
+        "name": "classes",
+        "value": "",
+        "label": "Style",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
@@ -300,6 +312,13 @@
         "name": "text",
         "value": "",
         "label": "Text",
+        "valueType": "string"
+      },
+      {
+        "component": "text",
+        "name": "classes",
+        "value": "",
+        "label": "Style",
         "valueType": "string"
       }
     ]
@@ -527,6 +546,18 @@
         "name": "content",
         "value": "",
         "label": "Content",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
+    "id": "tabs",
+    "fields": [
+      {
+        "component": "text",
+        "name": "classes",
+        "value": "",
+        "label": "Style",
         "valueType": "string"
       }
     ]
