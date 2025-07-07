@@ -58,7 +58,7 @@
           "name": "tabs_image",
           "label": "Image",
           "multi": false
-        },
+        }
       ]
     },
     {
