@@ -30,12 +30,14 @@
   --heading-font-size-xs: 11.36px;
   --nav-height: 64px;
   --header-height: var(--nav-height);
-  --button-background-color: rgba(0, 0, 0, 0);
-  --button-border: 1px solid #000;
-  --button-border-radius: 32px;
+  --button-background-color: #2563eb;
+  --button-border: 1px solid rgb(0, 0, 0);
+  --button-border-radius: 8px;
+  --button-padding: 12px 24px;
   --button-text-color: rgb(0, 0, 0);
   --button-font-family: "Instrument Sans", sans-serif;
-  --button-font-size: clamp(2.5rem, 8vw, 5rem);
+  --button-font-weight: 400;
+  --button-font-size: 18px;
 }
 
 /* fallback fonts */
@@ -260,29 +262,15 @@ main .section.light, main .section.highlight {
 }
 
 a.button:any-link, button {
-  font-size: var(--button-font-size);
-  background-color: var(--button-background-color);
-  font-family: var(--button-font-family);
-  row-gap: 8px;
-  text-align: center;
-  color: var(--button-text-color);
-  font-size: var(--button-font-size);
   border: var(--button-border);
-  display: block;
-  font-family: var(--button-font-family);
-  display: flex;
-  font-size: var(--button-font-size);
-  color: var(--button-text-color);
+  padding: var(--button-padding);
+  font-weight: var(--button-font-weight);
   border-radius: var(--button-border-radius);
   background-color: var(--button-background-color);
-  color: var(--button-text-color);
-  color: var(--button-text-color);
-  margin-bottom: 128px;
-  max-width: 1000px;
-  font-size: var(--button-font-size);
-  padding-inline-start: 16px;
-  display: grid;
-  line-height: 25.6px;
-  background-color: var(--button-background-color);
   font-family: var(--button-font-family);
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 51.1875px;
+  font-size: var(--button-font-size);
+  display: inline-flex;
+  color: var(--button-text-color);
 }
