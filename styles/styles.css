@@ -34,6 +34,7 @@
   --button-border: 1px solid #000;
   --button-border-radius: 32px;
   --button-padding-inline-start: 16px;
+  --button-text-color: rgb(0, 0, 0);
 }
 
 /* fallback fonts */
@@ -258,18 +259,26 @@ main .section.light, main .section.highlight {
 }
 
 a.button {
-  background-color: rgba(0, 0, 0, 0);
-  border: 1px solid #000;
-  border-radius: 32px;
-  padding-inline-start: 16px;
-}
-
-div.button-group {
-  row-gap: 8px;
-  display: flex;
-  font-family: "Instrument Sans", sans-serif;
-}
-
-div.button-group a.button {
+  background-color: var(--button-background-color);
+  border: var(--button-border);
+  border-radius: var(--button-border-radius);
   margin-bottom: 128px;
+  padding-inline-start: var(--button-padding-inline-start);
+}
+
+a.button:any-link, button {
+  font-family: "Instrument Sans", sans-serif;
+  row-gap: 8px;
+  text-align: center;
+  color: var(--button-text-color);
+  display: block;
+  font-family: "Instrument Sans", sans-serif;
+  display: flex;
+  color: var(--button-text-color);
+  background-color: var(--button-background-color);
+  color: var(--button-text-color);
+  color: var(--button-text-color);
+  display: grid;
+  background-color: var(--button-background-color);
+  font-family: "Instrument Sans", sans-serif;
 }
