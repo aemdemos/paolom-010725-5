@@ -1,4 +1,4 @@
-/* Merged CSS with Guidelines */
+/* Merged CSS with Guidelines Carefully Applied */
 :root {
   --background-color: white;
   --light-color: #f8f8f8;
@@ -158,7 +158,7 @@ a:hover {
 }
 
 /* buttons */
-a.button:any-link, button {
+a.button:any-link, button, .button {
   box-sizing: border-box;
   display: inline-block;
   max-width: 100%;
@@ -188,10 +188,10 @@ a.button:any-link, button {
 a.button:hover, a.button:focus, button:hover, button:focus {
   background-color: var(--link-hover-color);
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-button:disabled, button:disabled:hover,
-a.button:disabled {
+button:disabled, button:disabled:hover, .button:disabled, a.button:disabled {
   background-color: var(--light-color);
   cursor: unset;
   opacity: 0.5;
@@ -253,9 +253,9 @@ main .section.light, main .section.highlight {
 }
 
 .button-group {
+  display: flex;
   justify-content: center;
   column-gap: 8px;
-  display: flex;
 }
 
 .button, .secondary-button {
