@@ -33,8 +33,9 @@
   --button-background-color: rgba(0, 0, 0, 0);
   --button-border: 1px solid #000;
   --button-border-radius: 32px;
-  --button-padding-inline-start: 16px;
   --button-text-color: rgb(0, 0, 0);
+  --button-font-family: "Instrument Sans", sans-serif;
+  --button-font-size: clamp(2.5rem, 8vw, 5rem);
 }
 
 /* fallback fonts */
@@ -258,27 +259,74 @@ main .section.light, main .section.highlight {
   display: none;
 }
 
-a.button {
-  background-color: var(--button-background-color);
-  border: var(--button-border);
-  border-radius: var(--button-border-radius);
-  margin-bottom: 128px;
-  padding-inline-start: var(--button-padding-inline-start);
+a.button:any-link, button {
+  box-sizing: border-box;
+  display: inline-block;
+  max-width: 100%;
+  margin: 12px 0;
+  border: 0 solid transparent;
+  border-radius: 100rem;
+  box-shadow: 0 0 0 2px #000 inset, 4px 4px 0#f4fe8b80;
+  padding: 1em 1.5em;
+  font-family: var(--body-font-family);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  background-color: #0000;
+  color: #000;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+a.button:hover, a.button:focus, button:hover, button:focus {
+  border-color: transparent;
+  background-color: #f4fe8b1a;
+  box-shadow: 0 0 0 2px #000 inset, 7px 7px 0#f4fe8b;
+  color: #000;
+  cursor: pointer;
+}
+
+button:disabled, button:disabled:hover {
+  background-color: var(--light-color);
+  cursor: unset;
+}
+
+a.button.secondary, button.secondary {
+  background-color: unset;
+  border: 2px solid currentcolor;
+  color: var(--text-color);
+  box-shadow: 0 0 2px #000;
 }
 
 a.button:any-link, button {
-  font-family: "Instrument Sans", sans-serif;
+  font-size: var(--button-font-size);
+  background-color: var(--button-background-color);
+  font-family: var(--button-font-family);
   row-gap: 8px;
   text-align: center;
   color: var(--button-text-color);
+  font-size: var(--button-font-size);
+  border: var(--button-border);
   display: block;
-  font-family: "Instrument Sans", sans-serif;
+  font-family: var(--button-font-family);
   display: flex;
+  font-size: var(--button-font-size);
   color: var(--button-text-color);
+  border-radius: var(--button-border-radius);
   background-color: var(--button-background-color);
   color: var(--button-text-color);
   color: var(--button-text-color);
+  margin-bottom: 128px;
+  max-width: 1000px;
+  font-size: var(--button-font-size);
+  padding-inline-start: 16px;
   display: grid;
+  line-height: 25.6px;
   background-color: var(--button-background-color);
-  font-family: "Instrument Sans", sans-serif;
+  font-family: var(--button-font-family);
 }
