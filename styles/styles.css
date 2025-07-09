@@ -1,15 +1,4 @@
-
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
+/* Merged CSS with Guidelines */
 :root {
   --background-color: white;
   --light-color: #f8f8f8;
@@ -30,36 +19,29 @@
   --heading-font-size-xs: 11.36px;
   --nav-height: 64px;
   --header-height: var(--nav-height);
-  --button-background-color: transparent;
-  --button-border-radius: 100rem;
-  --button-padding: 1em 1.5em;
-  --button-text-color: rgb(0, 0, 0);
-  --button-box-shadow: 0 0 0 2px #000 inset, 4px 4px 0 #f4fe8b80;
-  --button-font-family: var(--body-font-family);
-  --button-font-size: 16px;
 }
 
 /* fallback fonts */
 @font-face {
-  font-family:"Instrument Sans Fallback";
-  font-style:normal;
-  font-weight:400;
-  src:local("Arial");
-  ascent-override:93.97%;
-  descent-override:24.22%;
-  line-gap-override:0.00%;
-  size-adjust:103.22%;
+  font-family: "Instrument Sans Fallback";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Arial");
+  ascent-override: 93.97%;
+  descent-override: 24.22%;
+  line-gap-override: 0.00%;
+  size-adjust: 103.22%;
 }
 
 @font-face {
-  font-family:"Syncopate Fallback";
-  font-style:normal;
-  font-weight:400;
-  src:local("Arial");
-  ascent-override:44.95%;
-  descent-override:12.31%;
-  line-gap-override:4.33%;
-  size-adjust:169.04%;
+  font-family: "Syncopate Fallback";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Arial");
+  ascent-override: 44.95%;
+  descent-override: 12.31%;
+  line-gap-override: 4.33%;
+  size-adjust: 169.04%;
 }
 
 @media (width>=900px) {
@@ -117,6 +99,9 @@ h1 {
 
 h2 {
   font-size: var(--heading-font-size-xl);
+  text-align: center;
+  color: rgb(0, 0, 0);
+  letter-spacing: -0.4528px;
 }
 
 h3 {
@@ -179,20 +164,25 @@ a.button:any-link, button {
   max-width: 100%;
   margin: 12px 0;
   border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  border-radius: 100rem;
+  padding: 1em 1.5em;
   font-family: var(--body-font-family);
   font-style: normal;
   font-weight: 500;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
+  background-color: transparent;
   color: var(--background-color);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-size: 16px;
+  min-width: 120px;
+  transition: background-color 0.2s, box-shadow 0.2s, color 0.2s;
+  outline: none;
+  box-shadow: 0 0 0 2px #000 inset, 4px 4px 0 #f4fe8b80;
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus {
@@ -200,9 +190,11 @@ a.button:hover, a.button:focus, button:hover, button:focus {
   cursor: pointer;
 }
 
-button:disabled, button:disabled:hover {
+button:disabled, button:disabled:hover,
+a.button:disabled {
   background-color: var(--light-color);
   cursor: unset;
+  opacity: 0.5;
 }
 
 a.button.secondary, button.secondary {
@@ -260,38 +252,27 @@ main .section.light, main .section.highlight {
   display: none;
 }
 
-a.button:any-link, button {
-  text-align: center;
-  padding: var(--button-padding);
-  font-family: var(--button-font-family);
-  box-sizing: border-box;
+.button-group {
   justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  color: var(--button-text-color);
-  font-size: var(--button-font-size);
-  transition: background-color 0.2s, box-shadow 0.2s, color 0.2s;
-  border-radius: var(--button-border-radius);
-  outline: none;
-  background-color: var(--button-background-color);
-  font-family: var(--button-font-family);
-  box-shadow: var(--button-box-shadow);
   column-gap: 8px;
-  min-width: 120px;
-  display: grid;
-  background-color: var(--button-background-color);
-  padding: var(--button-padding);
-  color: var(--button-text-color);
-  text-align: center;
+  display: flex;
 }
 
-a.button.secondary, button.secondary {
-  background-color: var(--button-background-color);
-  display: inline-block;
-  background-color: var(--button-background-color);
+.button, .secondary-button {
+  background-color: transparent;
   align-items: center;
 }
 
-button:disabled, button:disabled:hover {
-  opacity: 0.5;
+div.utility-margin-bottom-4rem {
+  margin-bottom: 64px;
+}
+
+div {
+  position: relative;
+  display: grid;
+  text-align: center;
+}
+
+p.subheading {
+  color: rgb(0, 0, 0);
 }
