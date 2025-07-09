@@ -109,9 +109,7 @@
   
   h2 {
     font-size: var(--heading-font-size-xl);
-    text-align: center;           /* Guideline #0 */
-    color: rgb(0, 0, 0);          /* Guideline #8 */
-    letter-spacing: -0.4528px;    /* Guideline #17 */
+    color: rgb(0, 0, 0); /* guideline applied: high-contrast black text */
   }
   
   h3 {
@@ -135,10 +133,6 @@
     margin-bottom: 0.25em;
   }
   
-  p.subheading {
-    color: rgb(0, 0, 0); /* Guideline #28 */
-  }
-  
   code, pre {
     font-size: var(--body-font-size-s);
   }
@@ -153,17 +147,6 @@
   
   main>div {
     margin: 40px 16px;
-  }
-  
-  /* Added for div per guidelines */
-  div {
-    position: relative;      /* Guideline #9 */
-    display: grid;           /* Guideline #25 */
-    text-align: center;      /* Guideline #29 */
-  }
-  
-  div.utility-margin-bottom-4rem {
-    margin-bottom: 64px;     /* Guideline #10 */
   }
   
   input, textarea, select, button {
@@ -183,59 +166,95 @@
   }
   
   /* buttons */
-  a.button:any-link, button, .button, .secondary-button {
-    box-sizing: border-box;                        /* Guideline #4 */
-    display: inline-block;                          /* Guideline #14 */
+  .button,
+  .secondary-button {
+    background-color: rgba(0, 0, 0, 0); /* guideline: transparent background */
+  }
+  
+  a.button,
+  a.secondary-button {
+    box-sizing: border-box;
+    display: inline-block;
     max-width: 100%;
     margin: 12px 0;
     border: 2px solid transparent;
-    border-radius: 100rem;                          /* Guideline #13 replaces 2.4em */
-    padding: 1em 1.5em;                             /* Guideline #1 & #27 replaces previous */
-    font-family: var(--body-font-family);          /* Guideline #3 & #19 */
+    border-radius: 2.4em;
+    padding: 0.5em 1.2em;
+    font-family: var(--body-font-family);
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;                                /* Guideline #11 */
     line-height: 1.25;
     text-align: center;
     text-decoration: none;
-    background-color: transparent;                  /* Guideline #2, #16, #18, #26 overrides previous filled */
-    color: var(--background-color);
-    cursor: pointer;                                /* Guideline #6 */
+    cursor: pointer;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    box-shadow: 0 0 0 2px #000 inset, 4px 4px 0 #f4fe8b80; /* Guideline #20 */
-    transition: background-color 0.2s, box-shadow 0.2s, color 0.2s; /* Guideline #12 */
-    outline: none;                                  /* Guideline #15 */
-    align-items: center;                            /* Guideline #22 */
-    vertical-align: middle;                         /* Ensures proper alignment for inline-block buttons */
-    min-width: 120px;                               /* Guideline #24 */
   }
   
-  a.button.secondary, button.secondary {
-    background-color: transparent;                  /* Guideline #16 overrides previous */
-    border: 2px solid currentcolor;
-    color: var(--text-color);
-    padding: 1em 1.5em;                             /* Consistent padding for secondary buttons */
-    border-radius: 100rem;                          /* Pill shape */
+  /* Primary anchor buttons */
+  a.button {
+    background-color: var(--link-color); /* brand color or transparent */
+    color: var(--background-color);
   }
   
-  a.button:hover, a.button:focus, button:hover, button:focus, .button:hover, .button:focus {
+  a.button:hover,
+  a.button:focus {
     background-color: var(--link-hover-color);
     cursor: pointer;
   }
   
-  button:disabled, .button:disabled, a.button:disabled, button:disabled:hover, .button:disabled:hover, a.button:disabled:hover {
-    opacity: 0.5;                                   /* Guideline #21 */
+  /* Secondary anchor buttons */
+  a.secondary-button {
+    background-color: #fff; /* white background */
+    color: var(--text-color);
+    border: 2px solid currentcolor;
+  }
+  
+  a.secondary-button:hover,
+  a.secondary-button:focus {
+    background-color: #f0f0f0; /* subtle lighter background on hover */
+    cursor: pointer;
+  }
+  
+  button {
+    box-sizing: border-box;
+    display: inline-block;
+    max-width: 100%;
+    margin: 12px 0;
+    border: 2px solid transparent;
+    border-radius: 2.4em;
+    padding: 0.5em 1.2em;
+    font-family: var(--body-font-family);
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.25;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--link-color);
+    color: var(--background-color);
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  
+  button:hover,
+  button:focus {
+    background-color: var(--link-hover-color);
+    cursor: pointer;
+  }
+  
+  button:disabled,
+  button:disabled:hover {
     background-color: var(--light-color);
     cursor: unset;
   }
   
-  .button-group {
-    justify-content: center;                         /* Guideline #5 */
-    column-gap: 8px;                                 /* Guideline #23 */
-    display: flex;                                   /* Needed for justify-content & column-gap to work */
-    flex-wrap: wrap;                                 /* Allow wrapping if needed */
+  button.secondary {
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid currentcolor;
+    color: var(--text-color);
   }
   
   main img {
