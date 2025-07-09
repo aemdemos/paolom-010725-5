@@ -10,6 +10,7 @@
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
+
 :root {
   --background-color: white;
   --light-color: #f8f8f8;
@@ -17,8 +18,8 @@
   --text-color: #131313;
   --link-color: #3b63fb;
   --link-hover-color: #1d3ecf;
-  --body-font-family: "Instrument Sans", "Instrument Sans Fallback", "sans-serif";
-  --heading-font-family: "Syncopate", "Syncopate Fallback", "sans-serif";
+  --body-font-family: "Instrument Sans", "Instrument Sans Fallback", sans-serif;
+  --heading-font-family: "Syncopate", "Syncopate Fallback", sans-serif;
   --body-font-size-m: 22.56px;
   --body-font-size-s: 16px;
   --body-font-size-xs: 11.36px;
@@ -30,37 +31,29 @@
   --heading-font-size-xs: 11.36px;
   --nav-height: 64px;
   --header-height: var(--nav-height);
-  --button-background-color: rgba(0, 0, 0, 0);
-  --button-border: 1px solid rgb(0, 0, 0);
-  --button-border-radius: 8px;
-  --button-padding: 12px 24px;
-  --button-text-color: rgb(0, 0, 0);
-  --button-font-family: Syncopate, sans-serif;
-  --button-font-weight: 400;
-  --button-font-size: 45.28px;
 }
 
 /* fallback fonts */
 @font-face {
-  font-family:"Instrument Sans Fallback";
-  font-style:normal;
-  font-weight:400;
-  src:local("Arial");
-  ascent-override:93.97%;
-  descent-override:24.22%;
-  line-gap-override:0.00%;
-  size-adjust:103.22%;
+  font-family: "Instrument Sans Fallback";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Arial");
+  ascent-override: 93.97%;
+  descent-override: 24.22%;
+  line-gap-override: 0.00%;
+  size-adjust: 103.22%;
 }
 
 @font-face {
-  font-family:"Syncopate Fallback";
-  font-style:normal;
-  font-weight:400;
-  src:local("Arial");
-  ascent-override:44.95%;
-  descent-override:12.31%;
-  line-gap-override:4.33%;
-  size-adjust:169.04%;
+  font-family: "Syncopate Fallback";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Arial");
+  ascent-override: 44.95%;
+  descent-override: 12.31%;
+  line-gap-override: 4.33%;
+  size-adjust: 169.04%;
 }
 
 @media (width>=900px) {
@@ -99,7 +92,8 @@ header .header, footer .footer {
   visibility: hidden;
 }
 
-header .header[data-block-status="loaded"], footer .footer[data-block-status="loaded"] {
+header .header[data-block-status="loaded"],
+footer .footer[data-block-status="loaded"] {
   visibility: visible;
 }
 
@@ -112,33 +106,26 @@ h1, h2, h3, h4, h5, h6 {
   scroll-margin: 40px;
 }
 
-h1 {
-  font-size: var(--heading-font-size-xxl);
+h1.h1-heading {
+  color: rgb(0, 0, 0);
 }
 
 h2 {
   font-size: var(--heading-font-size-xl);
+  letter-spacing: -0.4528px;
 }
 
-h3 {
-  font-size: var(--heading-font-size-l);
-}
-
-h4 {
-  font-size: var(--heading-font-size-m);
-}
-
-h5 {
-  font-size: var(--heading-font-size-s);
-}
-
-h6 {
-  font-size: var(--heading-font-size-xs);
+h2.alt {
+  font-size: 4rem;
 }
 
 p, dl, ol, ul, pre, blockquote {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
+}
+
+p.subheading {
+  color: rgb(0, 0, 0);
 }
 
 code, pre {
@@ -153,15 +140,41 @@ pre {
   white-space: pre;
 }
 
-main>div {
+main > div {
   margin: 40px 16px;
+}
+
+div {
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+div.container {
+  background-color: rgba(0, 0, 0, 0);
+  max-width: 1000px;
+}
+
+div.button-group {
+  display: flex;
+  margin-top: 64px;
+  gap: 8px;
+  justify-content: center;
+}
+
+div.grid-layout {
+  display: grid;
+  margin-bottom: 48px;
+  column-gap: 16px;
+}
+
+div.eyebrow {
+  color: rgb(128, 128, 128);
 }
 
 input, textarea, select, button {
   font: inherit;
 }
 
-/* links */
 a:any-link {
   color: var(--link-color);
   text-decoration: none;
@@ -173,32 +186,35 @@ a:hover {
   text-decoration: underline;
 }
 
-/* buttons */
 a.button:any-link, button {
   box-sizing: border-box;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
   max-width: 100%;
   margin: 12px 0;
-  border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 8px;
+  padding: 12px 24px;
   font-family: var(--body-font-family);
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
+  font-size: 18px;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  background-color: #2563eb;
+  color: rgb(0, 0, 0);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  height: 51.1875px;
+  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-a.button:hover, a.button:focus, button:hover, button:focus {
+a.button:hover, a.button:focus,
+button:hover, button:focus {
   background-color: var(--link-hover-color);
-  cursor: pointer;
 }
 
 button:disabled, button:disabled:hover {
@@ -229,29 +245,28 @@ main img {
   width: 100%;
 }
 
-/* sections */
-main>.section {
+main > .section {
   margin: 40px 0;
 }
 
-main>.section>div {
+main > .section > div {
   max-width: 1200px;
   margin: auto;
   padding: 0 24px;
 }
 
-main>.section:first-of-type {
+main > .section:first-of-type {
   margin-top: 0;
 }
 
 @media (width>=900px) {
-  main>.section>div {
+  main > .section > div {
     padding: 0 32px;
   }
 }
 
-/* section metadata */
-main .section.light, main .section.highlight {
+main .section.light,
+main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
@@ -261,31 +276,6 @@ main .section.light, main .section.highlight {
   display: none;
 }
 
-a.button:any-link, button {
-  border: var(--button-border);
-  font-family: var(--button-font-family);
-  color: var(--button-text-color);
-  padding: var(--button-padding);
-  margin-top: 64px;
-  font-size: var(--button-font-size);
-  font-weight: var(--button-font-weight);
-  text-align: center;
-  display: flex;
-  border-radius: var(--button-border-radius);
-  color: var(--button-text-color);
-  background-color: var(--button-background-color);
-  background-color: var(--button-background-color);
-  font-family: var(--button-font-family);
-  transition: background-color 0.2s cubic-bezier(0.4, 0, 0.2, 1);
-  color: var(--button-text-color);
-  display: grid;
-  height: 51.1875px;
-  font-size: var(--button-font-size);
-  max-width: 1000px;
-  gap: 8px;
-  color: var(--button-text-color);
-  display: inline-flex;
-  justify-content: center;
-  font-size: var(--button-font-size);
-  color: var(--button-text-color);
+div:not(.button-group):not(.grid-layout):not(.container):not(.eyebrow):not(.section) {
+  margin-bottom: 64px;
 }
