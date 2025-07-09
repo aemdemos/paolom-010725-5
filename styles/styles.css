@@ -109,7 +109,6 @@
   
   h2 {
     font-size: var(--heading-font-size-xl);
-    color: rgb(0, 0, 0); /* guideline applied: high-contrast black text */
   }
   
   h3 {
@@ -166,95 +165,69 @@
   }
   
   /* buttons */
-  .button,
-  .secondary-button {
-    background-color: rgba(0, 0, 0, 0); /* guideline: transparent background */
-  }
-  
-  a.button,
-  a.secondary-button {
-    box-sizing: border-box;
-    display: inline-block;
+  a.button:any-link, button, .button {
+    box-sizing: border-box; /* guideline #3 */
+    display: inline-block; /* guideline #10 */
     max-width: 100%;
     margin: 12px 0;
     border: 2px solid transparent;
-    border-radius: 2.4em;
-    padding: 0.5em 1.2em;
-    font-family: var(--body-font-family);
+    border-radius: 100rem; /* guideline #9 overriding previous 2.4em for pill shape */
+    padding: 1em 1.5em; /* guideline #0 and #21 replacing original 0.5em 1.2em */
+    font-family: var(--body-font-family); /* guideline #2 and #14 */
     font-style: normal;
     font-weight: 500;
+    font-size: 16px; /* guideline #7 */
     line-height: 1.25;
     text-align: center;
     text-decoration: none;
-    cursor: pointer;
+    background-color: transparent; /* guideline #1, #12, #13, #20 overriding original var(--link-color) */
+    color: var(--background-color);
+    cursor: pointer; /* guideline #5 */
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    box-shadow: 0 0 0 2px #000 inset, 4px 4px 0 #f4fe8b80; /* guideline #15 for tactile look */
+    transition: background-color 0.2s, box-shadow 0.2s, color 0.2s; /* guideline #8 */
+    outline: none; /* guideline #11 */
+    align-items: center; /* guideline #17 for vertical center */
+    min-width: 120px; /* guideline #19 */
   }
   
-  /* Primary anchor buttons */
-  a.button {
-    background-color: var(--link-color); /* brand color or transparent */
-    color: var(--background-color);
+  /* .button and .secondary-button get transparent background and center aligned content */
+  .button, .secondary-button {
+    background-color: transparent; /* guideline #1 */
+    align-items: center; /* guideline #17 */
   }
   
-  a.button:hover,
-  a.button:focus {
-    background-color: var(--link-hover-color);
-    cursor: pointer;
-  }
-  
-  /* Secondary anchor buttons */
-  a.secondary-button {
-    background-color: #fff; /* white background */
+  /* Secondary buttons: override some color and border */
+  a.button.secondary, button.secondary {
+    background-color: transparent; /* align with guideline #12 */
+    border: 2px solid currentColor;
     color: var(--text-color);
-    border: 2px solid currentcolor;
   }
   
-  a.secondary-button:hover,
-  a.secondary-button:focus {
-    background-color: #f0f0f0; /* subtle lighter background on hover */
-    cursor: pointer;
+  /* Button groups: center aligned with spacing */
+  .button-group {
+    display: flex; /* added to enable justify-content */
+    justify-content: center; /* guideline #4 */
+    column-gap: 8px; /* guideline #18 */
   }
   
-  button {
-    box-sizing: border-box;
-    display: inline-block;
-    max-width: 100%;
-    margin: 12px 0;
-    border: 2px solid transparent;
-    border-radius: 2.4em;
-    padding: 0.5em 1.2em;
-    font-family: var(--body-font-family);
-    font-style: normal;
-    font-weight: 500;
-    line-height: 1.25;
-    text-align: center;
-    text-decoration: none;
-    background-color: var(--link-color);
-    color: var(--background-color);
-    cursor: pointer;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-  
-  button:hover,
-  button:focus {
+  /* Hover and focus states */
+  a.button:hover, a.button:focus, button:hover, button:focus {
     background-color: var(--link-hover-color);
     cursor: pointer;
   }
   
-  button:disabled,
-  button:disabled:hover {
+  /* Disabled buttons */
+  button:disabled, .button:disabled, a.button:disabled {
+    opacity: 0.5; /* guideline #16 */
     background-color: var(--light-color);
     cursor: unset;
   }
-  
-  button.secondary {
-    background-color: rgba(0, 0, 0, 0);
-    border: 2px solid currentcolor;
-    color: var(--text-color);
+  button:disabled:hover, .button:disabled:hover, a.button:disabled:hover {
+    background-color: var(--light-color);
+    cursor: unset;
   }
   
   main img {
