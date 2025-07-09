@@ -30,6 +30,10 @@
   --heading-font-size-xs: 11.36px;
   --nav-height: 64px;
   --header-height: var(--nav-height);
+  --button-background-color: rgba(0, 0, 0, 0);
+  --button-border: 1px solid #000;
+  --button-border-radius: 32px;
+  --button-padding-inline-start: 16px;
 }
 
 /* fallback fonts */
@@ -251,4 +255,21 @@ main .section.light, main .section.highlight {
 
 .section.hidden {
   display: none;
+}
+
+a.button {
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #000;
+  border-radius: 32px;
+  padding-inline-start: 16px;
+}
+
+div.button-group {
+  row-gap: 8px;
+  display: flex;
+  font-family: "Instrument Sans", sans-serif;
+}
+
+div.button-group a.button {
+  margin-bottom: 128px;
 }
