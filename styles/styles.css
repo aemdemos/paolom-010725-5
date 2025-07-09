@@ -1,15 +1,4 @@
-
-/*
- * Copyright 2020 Adobe. All rights reserved.
- * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software distributed under
- * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
- * OF ANY KIND, either express or implied. See the License for the specific language
- * governing permissions and limitations under the License.
- */
+/* Combined CSS: Existing + Guidelines */
 :root {
   --background-color: white;
   --light-color: #f8f8f8;
@@ -30,41 +19,31 @@
   --heading-font-size-xs: 11.36px;
   --nav-height: 64px;
   --header-height: var(--nav-height);
-  --button-background-color: rgba(0, 0, 0, 0);
-  --button-border: 1px solid #000;
-  --button-border-radius: 32px;
-  --button-padding: 16px 32px;
-  --button-text-color: rgb(0, 0, 0);
-  --button-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  --button-font-family: "Instrument Sans", sans-serif;
-  --button-font-weight: 600 or 700;
-  --button-font-size: 45.28px;
-}
-
-/* fallback fonts */
-@font-face {
-  font-family:"Instrument Sans Fallback";
-  font-style:normal;
-  font-weight:400;
-  src:local("Arial");
-  ascent-override:93.97%;
-  descent-override:24.22%;
-  line-gap-override:0.00%;
-  size-adjust:103.22%;
 }
 
 @font-face {
-  font-family:"Syncopate Fallback";
-  font-style:normal;
-  font-weight:400;
-  src:local("Arial");
-  ascent-override:44.95%;
-  descent-override:12.31%;
-  line-gap-override:4.33%;
-  size-adjust:169.04%;
+  font-family: "Instrument Sans Fallback";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Arial");
+  ascent-override: 93.97%;
+  descent-override: 24.22%;
+  line-gap-override: 0.00%;
+  size-adjust: 103.22%;
 }
 
-@media (width>=900px) {
+@font-face {
+  font-family: "Syncopate Fallback";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Arial");
+  ascent-override: 44.95%;
+  descent-override: 12.31%;
+  line-gap-override: 4.33%;
+  size-adjust: 169.04%;
+}
+
+@media (width >= 900px) {
   :root {
     --body-font-size-m: 22.56px;
     --body-font-size-s: 16px;
@@ -96,15 +75,22 @@ header {
   height: var(--nav-height);
 }
 
-header .header, footer .footer {
+header .header,
+footer .footer {
   visibility: hidden;
 }
 
-header .header[data-block-status="loaded"], footer .footer[data-block-status="loaded"] {
+header .header[data-block-status="loaded"],
+footer .footer[data-block-status="loaded"] {
   visibility: visible;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
@@ -119,6 +105,9 @@ h1 {
 
 h2 {
   font-size: var(--heading-font-size-xl);
+  text-align: center;
+  color: rgb(0, 0, 0);
+  letter-spacing: -0.4528px;
 }
 
 h3 {
@@ -137,12 +126,22 @@ h6 {
   font-size: var(--heading-font-size-xs);
 }
 
-p, dl, ol, ul, pre, blockquote {
+p.subheading {
+  color: rgb(0, 0, 0);
+}
+
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
 }
 
-code, pre {
+code,
+pre {
   font-size: var(--body-font-size-s);
 }
 
@@ -154,12 +153,29 @@ pre {
   white-space: pre;
 }
 
-main>div {
+main > div {
   margin: 40px 16px;
 }
 
-input, textarea, select, button {
-  font: inherit;
+div {
+  position: relative;
+  text-align: center;
+  display: grid;
+}
+
+div.utility-margin-bottom-4rem {
+  margin-bottom: 64px;
+}
+
+.button-group {
+  justify-content: center;
+  column-gap: 8px;
+}
+
+.button,
+.secondary-button {
+  background-color: rgba(0, 0, 0, 0);
+  align-items: center;
 }
 
 /* links */
@@ -175,42 +191,62 @@ a:hover {
 }
 
 /* buttons */
-a.button:any-link, button {
+a.button:any-link,
+button,
+.button {
   box-sizing: border-box;
   display: inline-block;
   max-width: 100%;
   margin: 12px 0;
   border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  border-radius: 4px;
+  padding: 0.75em 2em;
   font-family: var(--body-font-family);
   font-style: normal;
   font-weight: 500;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
+  background-color: #000000;
   color: var(--background-color);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-size: 16px;
+  transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
+  outline: 2px solid transparent;
 }
 
-a.button:hover, a.button:focus, button:hover, button:focus {
+a.button.secondary,
+button.secondary,
+a.secondary-button {
+  background-color: #fff;
+  border: 2px solid currentcolor;
+  color: var(--text-color);
+}
+
+a.button:hover,
+a.button:focus,
+button:hover,
+button:focus {
   background-color: var(--link-hover-color);
-  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-button:disabled, button:disabled:hover {
+button:disabled,
+.button:disabled,
+a.button:disabled {
+  opacity: 0.5;
   background-color: var(--light-color);
   cursor: unset;
 }
 
-a.button.secondary, button.secondary {
-  background-color: unset;
-  border: 2px solid currentcolor;
-  color: var(--text-color);
+input,
+textarea,
+select,
+button {
+  font: inherit;
 }
 
 main img {
@@ -230,29 +266,28 @@ main img {
   width: 100%;
 }
 
-/* sections */
-main>.section {
+main > .section {
   margin: 40px 0;
 }
 
-main>.section>div {
+main > .section > div {
   max-width: 1200px;
   margin: auto;
   padding: 0 24px;
 }
 
-main>.section:first-of-type {
+main > .section:first-of-type {
   margin-top: 0;
 }
 
-@media (width>=900px) {
-  main>.section>div {
+@media (width >= 900px) {
+  main > .section > div {
     padding: 0 32px;
   }
 }
 
-/* section metadata */
-main .section.light, main .section.highlight {
+main .section.light,
+main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
@@ -260,41 +295,4 @@ main .section.light, main .section.highlight {
 
 .section.hidden {
   display: none;
-}
-
-a.button:any-link, button {
-  font-family: var(--button-font-family);
-  background-color: var(--button-background-color);
-  text-align: center;
-  border: var(--button-border);
-  display: block;
-  display: flex;
-  background-color: var(--button-background-color);
-  color: var(--button-text-color);
-  border-radius: var(--button-border-radius);
-  box-shadow: var(--button-box-shadow);
-  align-self: end;
-  font-family: var(--button-font-family);
-  padding: var(--button-padding);
-  font-size: var(--button-font-size);
-  font-weight: var(--button-font-weight);
-  display: inline-block or flex;
-  cursor: pointer;
-  justify-content: center;
-}
-
-a.button.secondary, button.secondary {
-  border-radius: var(--button-border-radius);
-  align-items: center;
-  padding: var(--button-padding);
-  cursor: pointer;
-  font-family: var(--button-font-family);
-  transition: all 0.2s ease;
-  background-color: var(--button-background-color);
-  border: var(--button-border);
-  border-radius: var(--button-border-radius);
-}
-
-button:disabled, button:disabled:hover {
-  opacity: 0.5 or 0.6;
 }
