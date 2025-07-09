@@ -135,25 +135,27 @@ a:hover {
 
 /* Buttons */
 a.button:any-link, button, .button, a.secondary-button {
-  box-sizing: border-box;
   display: inline-block;
   max-width: 100%;
   margin: 12px 0;
-  border: 2px solid transparent;
-  border-radius: 100rem;
-  padding: 1em 1.5em;
   font-family: var(--body-font-family);
   font-style: normal;
   font-weight: 500;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: transparent;
   color: var(--text-color);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+
+  /* Overridden or newly applied styles from guidelines */
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 2px solid transparent;
+  border-radius: 100rem;
+  padding: 1em 1.5em;
   font-size: 16px;
   box-shadow: 0 0 0 2px #000 inset, 4px 4px 0 #f4fe8b80;
   min-width: 120px;
@@ -161,6 +163,7 @@ a.button:any-link, button, .button, a.secondary-button {
 
 a.button:hover, a.button:focus, button:hover, button:focus {
   background-color: var(--link-hover-color);
+  cursor: pointer;
 }
 
 button:disabled, .button:disabled, a.button:disabled, button:disabled:hover {
@@ -241,3 +244,4 @@ main .section.light, main .section.highlight {
 .section.hidden {
   display: none;
 }
+
