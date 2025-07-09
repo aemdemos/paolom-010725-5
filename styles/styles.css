@@ -19,16 +19,16 @@
   --link-hover-color: #1d3ecf;
   --body-font-family: "Instrument Sans", "Instrument Sans Fallback", "sans-serif";
   --heading-font-family: "Syncopate", "Syncopate Fallback", "sans-serif";
-  --body-font-size-m: 18px;
+  --body-font-size-m: 22.56px;
   --body-font-size-s: 16px;
   --body-font-size-xs: 11.36px;
-  --heading-font-size-xxl: 57.4px;
+  --heading-font-size-xxl: 90.4px;
   --heading-font-size-xl: 45.28px;
   --heading-font-size-l: 22.56px;
   --heading-font-size-m: 22.56px;
   --heading-font-size-s: 16px;
   --heading-font-size-xs: 11.36px;
-  --nav-height: 75px;
+  --nav-height: 64px;
   --header-height: var(--nav-height);
 }
 
@@ -57,7 +57,7 @@
 
 @media (width>=900px) {
   :root {
-    --body-font-size-m: 18px;
+    --body-font-size-m: 22.56px;
     --body-font-size-s: 16px;
     --body-font-size-xs: 11.36px;
     --heading-font-size-xxl: 90.4px;
@@ -99,10 +99,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.25;
   scroll-margin: 40px;
-  letter-spacing: -0.904px;
 }
 
 h1 {
@@ -147,7 +146,7 @@ pre {
 }
 
 main>div {
-  padding: 40px 16px;
+  margin: 40px 16px;
 }
 
 input, textarea, select, button {
@@ -172,19 +171,17 @@ a.button:any-link, button {
   display: inline-block;
   max-width: 100%;
   margin: 12px 0;
-  border: 0 solid transparent;
-  border-radius: 100rem;
-  box-shadow: 0 0 0 2px #000 inset, 4px 4px 0 #f4fe8b80;
-  padding: 1em 1.5em;
+  border: 2px solid transparent;
+  border-radius: 2.4em;
+  padding: 0.5em 1.2em;
   font-family: var(--body-font-family);
-  font-size: 1rem;
   font-style: normal;
   font-weight: 500;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: #0000;
-  color: #000;
+  background-color: var(--link-color);
+  color: var(--background-color);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -192,10 +189,7 @@ a.button:any-link, button {
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus {
-  border-color: transparent;
-  background-color: #f4fe8b1a;
-  box-shadow: 0 0 0 2px #000 inset, 7px 7px 0 #f4fe8b;
-  color: #000;
+  background-color: var(--link-hover-color);
   cursor: pointer;
 }
 
@@ -208,7 +202,6 @@ a.button.secondary, button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color);
-  box-shadow: 0 0 2px #000;
 }
 
 main img {
@@ -230,12 +223,11 @@ main img {
 
 /* sections */
 main>.section {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  margin: 40px 0;
 }
 
 main>.section>div {
-  max-width: 1248px;
+  max-width: 1200px;
   margin: auto;
   padding: 0 24px;
 }
@@ -255,14 +247,6 @@ main .section.light, main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
-}
-
-main .section.secondary {
-  background-color: #f7f8f5;
-}
-
-main .section.tertiary {
-  background-color: #000;
 }
 
 .section.hidden {
