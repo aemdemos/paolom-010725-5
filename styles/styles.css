@@ -1,16 +1,17 @@
+```css
 
 /*
  * Copyright 2020 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License. You may obtain a copy
- * of the License at http://www.apache.org/licenses/LICENSE-2.0
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software distributed under
  * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR REPRESENTATIONS
  * OF ANY KIND, either express or implied. See the License for the specific language
  * governing permissions and limitations under the License.
  */
-:root {
+ :root {
   --background-color: white;
   --light-color: #f8f8f8;
   --dark-color: #505050;
@@ -19,10 +20,10 @@
   --link-hover-color: #1d3ecf;
   --body-font-family: "Instrument Sans", "Instrument Sans Fallback", "sans-serif";
   --heading-font-family: "Syncopate", "Syncopate Fallback", "sans-serif";
-  --body-font-size-m: 18px;
+  --body-font-size-m: 22.56px;
   --body-font-size-s: 16px;
   --body-font-size-xs: 11.36px;
-  --heading-font-size-xxl: 57.4px;
+  --heading-font-size-xxl: 90.4px;
   --heading-font-size-xl: 45.28px;
   --heading-font-size-l: 22.56px;
   --heading-font-size-m: 22.56px;
@@ -57,7 +58,7 @@
 
 @media (width>=900px) {
   :root {
-    --body-font-size-m: 18px;
+    --body-font-size-m: 22.56px;
     --body-font-size-s: 16px;
     --body-font-size-xs: 11.36px;
     --heading-font-size-xxl: 90.4px;
@@ -66,6 +67,7 @@
     --heading-font-size-m: 22.56px;
     --heading-font-size-s: 16px;
     --heading-font-size-xs: 11.36px;
+    --nav-height: 75px;
   }
 }
 
@@ -167,23 +169,23 @@ a:hover {
 }
 
 /* buttons */
-a.button:any-link, button {
+a.button:any-link, button, .button {
   box-sizing: border-box;
   display: inline-block;
   max-width: 100%;
   margin: 12px 0;
   border: 0 solid transparent;
   border-radius: 100rem;
-  box-shadow: 0 0 0 2px #000 inset, 4px 4px 0 #f4fe8b80;
+  box-shadow: 0 0 0 2px #000 inset, 4px 4px 0#f4fe8b80;
   padding: 1em 1.5em;
   font-family: var(--body-font-family);
-  font-size: 1rem;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: #0000;
+  background-color: transparent;
   color: #000;
   cursor: pointer;
   overflow: hidden;
@@ -191,24 +193,37 @@ a.button:any-link, button {
   white-space: nowrap;
 }
 
-a.button:hover, a.button:focus, button:hover, button:focus {
+a.button:hover, a.button:focus, .button:hover, .button:focus, button:hover, button:focus {
   border-color: transparent;
   background-color: #f4fe8b1a;
-  box-shadow: 0 0 0 2px #000 inset, 7px 7px 0 #f4fe8b;
+  box-shadow: 0 0 0 2px #000 inset, 7px 7px 0#f4fe8b;
   color: #000;
   cursor: pointer;
 }
 
-button:disabled, button:disabled:hover {
-  background-color: var(--light-color);
+button:disabled, .button:disabled, a.button:disabled {
+  opacity: 0.5;
   cursor: unset;
 }
 
-a.button.secondary, button.secondary {
-  background-color: unset;
+a.button.secondary, button.secondary, .secondary-button {
+  background-color: transparent;
   border: 2px solid currentcolor;
   color: var(--text-color);
   box-shadow: 0 0 2px #000;
+}
+
+.button, .secondary-button {
+  align-items: center;
+}
+
+.button-group {
+  justify-content: center;
+  column-gap: 8px;
+}
+
+a.button {
+  min-width: 120px;
 }
 
 main img {
@@ -267,4 +282,11 @@ main .section.tertiary {
 
 .section.hidden {
   display: none;
+}
+```.section.section-1 {
+  background: rgb(247, 248, 245) none repeat scroll 0% 0% / auto padding-box border-box;
+}
+
+.section.section-2 {
+  background: rgb(0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
 }
