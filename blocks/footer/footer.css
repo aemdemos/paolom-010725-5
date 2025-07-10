@@ -1,10 +1,10 @@
 footer {
-  background-color: #000;
   font-size: var(--body-font-size-xs);
   color: #fff;
+  background: rgb(0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
 }
 
-footer .footer > div {
+footer .footer>div {
   margin: auto;
   max-width: 1248px;
   padding: 40px 24px 24px;
@@ -18,8 +18,8 @@ footer .footer a:any-link {
   color: #fff;
 }
 
-@media (width >= 900px) {
-  footer .footer > div {
+@media (width>=900px) {
+  footer .footer>div {
     padding: 40px 32px 24px;
   }
 }
