@@ -34,17 +34,6 @@
 
 /* fallback fonts */
 @font-face {
-  font-family:"Instrument Sans Fallback";
-  font-style:normal;
-  font-weight:400;
-  src:local("Arial");
-  ascent-override:93.97%;
-  descent-override:24.22%;
-  line-gap-override:0.00%;
-  size-adjust:103.22%;
-}
-
-@font-face {
   font-family:"Syncopate Fallback";
   font-style:normal;
   font-weight:400;
@@ -53,6 +42,17 @@
   descent-override:12.31%;
   line-gap-override:4.33%;
   size-adjust:169.04%;
+}
+
+@font-face {
+  font-family:"Instrument Sans Fallback";
+  font-style:normal;
+  font-weight:400;
+  src:local("Arial");
+  ascent-override:93.97%;
+  descent-override:24.22%;
+  line-gap-override:0.00%;
+  size-adjust:103.22%;
 }
 
 @media (width>=900px) {
@@ -168,7 +168,7 @@ a:hover {
 }
 
 /* buttons */
-a.button:any-link, button {
+a.button:any-link, button, .button, a.button {
   box-sizing: border-box;
   display: inline-block;
   max-width: 100%;
@@ -178,31 +178,58 @@ a.button:any-link, button {
   box-shadow: 0 0 0 2px #000 inset, 4px 4px 0#f4fe8b80;
   padding: 1em 1.5em;
   font-family: var(--body-font-family);
-  font-size: 1rem;
+  font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: #0000;
+  background-color: transparent;
   color: #000;
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  outline: none;
 }
 
-a.button:hover, a.button:focus, button:hover, button:focus {
+.button, .secondary-button {
+  background-color: transparent;
+  align-items: center;
+}
+
+a.button, a.secondary-button {
+  display: inline-block;
+  background-color: transparent;
+}
+
+a.button {
+  box-sizing: border-box;
+  padding: 1em 1.5em;
+  font-size: 16px;
+  min-width: 120px;
+  background-color: transparent;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  column-gap: 8px;
+}
+
+a.button:hover, a.button:focus, button:hover, button:focus, .button:hover, .button:focus {
   border-color: transparent;
   background-color: #f4fe8b1a;
   box-shadow: 0 0 0 2px #000 inset, 7px 7px 0#f4fe8b;
   color: #000;
   cursor: pointer;
+  outline: none;
 }
 
-button:disabled, button:disabled:hover {
+button:disabled, .button:disabled, a.button:disabled, button:disabled:hover, .button:disabled:hover, a.button:disabled:hover {
   background-color: var(--light-color);
   cursor: unset;
+  opacity: 0.5;
 }
 
 a.button.secondary, button.secondary {
@@ -271,17 +298,17 @@ main .section.tertiary {
 }
 
 .section.section-1 {
-  background: rgb(247, 248, 245) none repeat scroll 0% 0%/auto padding-box border-box;
-}
-
-.section.section-2 {
-  background: rgb(0, 0, 0) none repeat scroll 0% 0%/auto padding-box border-box;
-}
-
-.section.section-1 {
   background: rgb(247, 248, 245) none repeat scroll 0% 0% / auto padding-box border-box;
 }
 
 .section.section-2 {
   background: rgb(0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
+}
+
+.section.section-1 {
+  background: rgb(247, 248, 245) none repeat scroll 0% 0%/auto padding-box border-box;
+}
+
+.section.section-2 {
+  background: rgb(0, 0, 0) none repeat scroll 0% 0%/auto padding-box border-box;
 }
