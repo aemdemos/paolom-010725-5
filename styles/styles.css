@@ -57,7 +57,7 @@
 
 @media (width>=900px) {
   :root {
-    --body-font-size-m: 18px;
+    --body-font-size-m: 22.56px;
     --body-font-size-s: 16px;
     --body-font-size-xs: 11.36px;
     --heading-font-size-xxl: 90.4px;
@@ -99,10 +99,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.25;
   scroll-margin: 40px;
-  letter-spacing: -0.904px;
 }
 
 h1 {
@@ -147,7 +146,7 @@ pre {
 }
 
 main>div {
-  padding: 40px 16px;
+  margin: 40px 16px;
 }
 
 input, textarea, select, button {
@@ -165,7 +164,7 @@ a:hover {
   color: var(--link-hover-color);
   text-decoration: underline;
 }
-  
+
 /* buttons */
 a.button:any-link, button {
   box-sizing: border-box;
@@ -224,12 +223,11 @@ main img {
 
 /* sections */
 main>.section {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  margin: 40px 0;
 }
 
 main>.section>div {
-  max-width: 1248px;
+  max-width: 1200px;
   margin: auto;
   padding: 0 24px;
 }
@@ -249,14 +247,6 @@ main .section.light, main .section.highlight {
   background-color: var(--light-color);
   margin: 0;
   padding: 40px 0;
-}
-
-main .section.secondary {
-  background-color: #f7f8f5;
-}
-
-main .section.tertiary {
-  background-color: #000;
 }
 
 .section.hidden {
