@@ -19,10 +19,10 @@
   --link-hover-color: #1d3ecf;
   --body-font-family: "Instrument Sans", "Instrument Sans Fallback", "sans-serif";
   --heading-font-family: "Syncopate", "Syncopate Fallback", "sans-serif";
-  --body-font-size-m: 18px;
+  --body-font-size-m: 22.56px;
   --body-font-size-s: 16px;
   --body-font-size-xs: 11.36px;
-  --heading-font-size-xxl: 57.4px;
+  --heading-font-size-xxl: 90.4px;
   --heading-font-size-xl: 45.28px;
   --heading-font-size-l: 22.56px;
   --heading-font-size-m: 22.56px;
@@ -66,6 +66,7 @@
     --heading-font-size-m: 22.56px;
     --heading-font-size-s: 16px;
     --heading-font-size-xs: 11.36px;
+    --nav-height: 75px;
   }
 }
 
@@ -166,23 +167,64 @@ a:hover {
 }
 
 /* buttons */
-a.button:any-link, button {
+a.button:any-link, button, .button, .button:disabled, .button.secondary, a.button.secondary, .secondary-button, a.secondary-button {
   box-sizing: border-box;
+}
+
+a.button, a.secondary-button {
   display: inline-block;
+  background-color: transparent;
+}
+
+.button, .secondary-button {
+  background-color: transparent;
+  align-items: center;
+  display: inline-flex;
+}
+
+a.button {
+  font-size: 16px;
+  min-width: 120px;
+  padding: 1em 1.5em;
+  box-sizing: border-box;
+  background-color: transparent;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 8px;
+}
+
+a.button:any-link, button, .button, a.button, .button, a.secondary-button {
+  font-family: var(--body-font-family);
+}
+
+button, .button, a.button {
+  font-family: var(--body-font-family);
+  border-radius: 100rem;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 0 0 2px #000 inset, 4px 4px 0#f4fe8b80;
+  padding: 1em 1.5em;
+  color: #000;
+  background-color: transparent;
+}
+
+a.button, .button, .secondary-button {
+  color: #000;
+}
+
+a.button, button {
   max-width: 100%;
   margin: 12px 0;
   border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
-  font-family: var(--body-font-family);
   font-style: normal;
   font-weight: 500;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
-  cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -193,13 +235,14 @@ a.button:hover, a.button:focus, button:hover, button:focus {
   cursor: pointer;
 }
 
-button:disabled, button:disabled:hover {
-  background-color: var(--light-color);
+button:disabled, .button:disabled, a.button:disabled {
+  opacity: 0.5;
   cursor: unset;
+  background-color: var(--light-color);
 }
 
-a.button.secondary, button.secondary {
-  background-color: unset;
+a.button.secondary, button.secondary, .secondary-button {
+  background-color: transparent;
   border: 2px solid currentcolor;
   color: var(--text-color);
 }
@@ -251,4 +294,12 @@ main .section.light, main .section.highlight {
 
 .section.hidden {
   display: none;
+}
+
+.section.section-1 {
+  background: rgb(247, 248, 245) none repeat scroll 0% 0% / auto padding-box border-box;
+}
+
+.section.section-2 {
+  background: rgb(0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
 }
