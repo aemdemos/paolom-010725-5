@@ -182,7 +182,7 @@ a.button:any-link, button {
   text-align: center;
   text-decoration: none;
   background-color: transparent;
-  color: var(--background-color);
+  color: var(--text-color);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
