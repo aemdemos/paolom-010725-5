@@ -19,10 +19,10 @@
   --link-hover-color: #1d3ecf;
   --body-font-family: "Instrument Sans", "Instrument Sans Fallback", "sans-serif";
   --heading-font-family: "Syncopate", "Syncopate Fallback", "sans-serif";
-  --body-font-size-m: 18px;
+  --body-font-size-m: 22.56px;
   --body-font-size-s: 16px;
   --body-font-size-xs: 11.36px;
-  --heading-font-size-xxl: 57.4px;
+  --heading-font-size-xxl: 90.4px;
   --heading-font-size-xl: 45.28px;
   --heading-font-size-l: 22.56px;
   --heading-font-size-m: 22.56px;
@@ -66,6 +66,7 @@
     --heading-font-size-m: 22.56px;
     --heading-font-size-s: 16px;
     --heading-font-size-xs: 11.36px;
+    --nav-height: 75px;
   }
 }
 
@@ -172,20 +173,39 @@ a.button:any-link, button {
   max-width: 100%;
   margin: 12px 0;
   border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  border-radius: 100rem;
+  padding: 1em 1.5em;
   font-family: var(--body-font-family);
   font-style: normal;
   font-weight: 500;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  background-color: transparent;
+  color: var(--text-color);
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  box-shadow: 0 0 0 2px #000 inset, 4px 4px 0#f4fe8b80;
+  outline: none;
+}
+
+a.button {
+  padding: 1em 1.5em;
+  box-sizing: border-box;
+  font-size: 16px;
+  min-width: 120px;
+}
+
+a.button, a.secondary-button {
+  display: inline-block;
+  background-color: transparent;
+}
+
+.button, .secondary-button {
+  background-color: transparent;
+  align-items: center;
 }
 
 a.button:hover, a.button:focus, button:hover, button:focus {
@@ -193,15 +213,52 @@ a.button:hover, a.button:focus, button:hover, button:focus {
   cursor: pointer;
 }
 
-button:disabled, button:disabled:hover {
+button:disabled, button:disabled:hover, .button:disabled, a.button:disabled {
   background-color: var(--light-color);
   cursor: unset;
+  opacity: 0.5;
 }
 
 a.button.secondary, button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color);
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  column-gap: 8px;
+}
+
+/* override for any element using .button or .secondary-button outside of <a> (ensures structure) */
+.button, .secondary-button, button {
+  font-family: var(--body-font-family);
+  border-radius: 100rem;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  align-items: center;
+  padding: 1em 1.5em;
+  box-shadow: 0 0 0 2px #000 inset, 4px 4px 0#f4fe8b80;
+}
+
+/* ensures that .button and .secondary-button as flex or grid items are centered */
+.button, .secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* disabled styles for .button and .secondary-button */
+.button:disabled, .secondary-button:disabled {
+  opacity: 0.5;
+  cursor: unset;
+}
+
+/* remove outline on button, .button, a.button when focused */
+button:focus, .button:focus, a.button:focus {
+  outline: none;
 }
 
 main img {
@@ -251,4 +308,12 @@ main .section.light, main .section.highlight {
 
 .section.hidden {
   display: none;
+}
+
+.section.section-1 {
+  background: rgb(247, 248, 245) none repeat scroll 0% 0% / auto padding-box border-box;
+}
+
+.section.section-2 {
+  background: rgb(0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
 }
