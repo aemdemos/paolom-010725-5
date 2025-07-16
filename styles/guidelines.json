@@ -138,5 +138,12 @@
       "value": "1em 1.5em",
       "context": "Apply padding: 1em 1.5em to button elements",
       "description": "Increases the clickable area and visual weight of the button, aligning with the inset box-shadow style."
+    },
+    "20": {
+      "element": "button, .button, a.button",
+      "property": "color",
+      "value": "#000",
+      "context": "Apply color: #000 to button elements",
+      "description": "Ensures button text is visible by default, especially when using transparent backgrounds."
     }
 }
