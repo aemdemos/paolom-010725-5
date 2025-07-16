@@ -19,10 +19,10 @@
   --link-hover-color: #1d3ecf;
   --body-font-family: "Instrument Sans", "Instrument Sans Fallback", "sans-serif";
   --heading-font-family: "Syncopate", "Syncopate Fallback", "sans-serif";
-  --body-font-size-m: 18px;
+  --body-font-size-m: 22.56px;
   --body-font-size-s: 16px;
   --body-font-size-xs: 11.36px;
-  --heading-font-size-xxl: 57.4px;
+  --heading-font-size-xxl: 90.4px;
   --heading-font-size-xl: 45.28px;
   --heading-font-size-l: 22.56px;
   --heading-font-size-m: 22.56px;
@@ -66,6 +66,7 @@
     --heading-font-size-m: 22.56px;
     --heading-font-size-s: 16px;
     --heading-font-size-xs: 11.36px;
+    --nav-height: 75px;
   }
 }
 
@@ -166,34 +167,58 @@ a:hover {
 }
 
 /* buttons */
-a.button:any-link, button {
+a.button:any-link, button, .button {
   box-sizing: border-box;
   display: inline-block;
+  min-width: 120px;
   max-width: 100%;
   margin: 12px 0;
   border: 2px solid transparent;
-  border-radius: 2.4em;
-  padding: 0.5em 1.2em;
+  border-radius: 100rem;
+  padding: 1em 1.5em;
   font-family: var(--body-font-family);
   font-style: normal;
   font-weight: 500;
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  background-color: var(--link-color);
-  color: var(--background-color);
+  background-color: transparent;
+  color: #000;
   cursor: pointer;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  outline: none;
+  box-shadow: 0 0 0 2px #000 inset, 4px 4px 0#f4fe8b80;
 }
 
-a.button:hover, a.button:focus, button:hover, button:focus {
+a.button {
+  font-size: 16px;
+}
+
+a.button, a.secondary-button {
+  display: inline-block;
+  background-color: transparent;
+}
+
+.button, .secondary-button {
+  background-color: transparent;
+  align-items: center;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  column-gap: 8px;
+}
+
+a.button:hover, a.button:focus, button:hover, button:focus, .button:hover, .button:focus {
   background-color: var(--link-hover-color);
   cursor: pointer;
 }
 
-button:disabled, button:disabled:hover {
+button:disabled, button:disabled:hover, .button:disabled, a.button:disabled {
+  opacity: 0.5;
   background-color: var(--light-color);
   cursor: unset;
 }
@@ -251,4 +276,12 @@ main .section.light, main .section.highlight {
 
 .section.hidden {
   display: none;
+}
+
+.section.section-1 {
+  background: rgb(247, 248, 245) none repeat scroll 0% 0% / auto padding-box border-box;
+}
+
+.section.section-2 {
+  background: rgb(0, 0, 0) none repeat scroll 0% 0% / auto padding-box border-box;
 }
